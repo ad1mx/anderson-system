@@ -1,1 +1,1 @@
-yarn dev
+nodemon index.js
