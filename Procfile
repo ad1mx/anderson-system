@@ -1,1 +1,1 @@
-app yarn dev
+worker yarn dev
