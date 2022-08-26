@@ -39,8 +39,12 @@ const loadCommands = async (client) => {
     const rest = new REST({ version: '10' }).setToken(TOKEN)
 
     for (const GUILD of GUILDS.split(',')) {
-        await rest.put(Routes.applicationGuildCommands(CLIENT_ID, GUILD), { body: commandsArray }).then(console.log(`${colors.yellow('Commands >')} Successfuly reloaded guilds (/) commands `))
+        await rest.put(Routes.applicationGuildCommands(CLIENT_ID, GUILD), {
+            body: commandsArray
+        })
+            .then(() => console.log(`${colors.yellow('Commands >')} Successfuly reloaded Guild (/) commands `))
     }
+
 }
 
 module.exports = { loadCommands }
