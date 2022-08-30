@@ -19,8 +19,8 @@ module.exports = {
 
             const sugEmbed = new EmbedBuilder()
                 .setAuthor({
-                    name: modal.member.displayName,
-                    iconURL: modal.member.displayAvatarURL()
+                    name: modal.guild.name,
+                    iconURL: modal.guild.iconURL()
                 })
                 .setTitle('<:sug2:1013859955692011551>・Suggestion')
                 .setFields([
@@ -34,8 +34,8 @@ module.exports = {
                     }
                 ])
                 .setFooter({
-                    text: modal.guild.name,
-                    iconURL: modal.guild.iconURL()
+                    text: `By: ${modal.member.displayName}`,
+                    iconURL: modal.member.displayAvatarURL()
                 })
                 .setTimestamp()
                 .setColor(0x00ceff)
