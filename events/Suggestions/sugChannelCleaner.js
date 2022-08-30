@@ -9,7 +9,7 @@ module.exports = {
      */
     async run(message, client) {
         if (message.channelId === process.env.sugsChannelId && message.author.id !== client.user.id) {
-            message.delete()
+            await message.delete()
         }
     }
 }

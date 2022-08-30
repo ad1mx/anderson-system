@@ -16,7 +16,7 @@ module.exports = {
             const command = await client.commands.get(interaction.commandName)
 
             if (!command) return await interaction.reply({
-                embeds: [new ErrorEmbed('هذا الامر لم يعد متوفرا بعد!')],
+                embeds: [new ErrorEmbed('هذا الامر لم يعد متوفرا !')],
                 ephemeral: true
             });
             if (command.dev) {
