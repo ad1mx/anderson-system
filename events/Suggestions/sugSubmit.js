@@ -30,7 +30,7 @@ module.exports = {
                     }
                 ])
                 .setFooter({
-                    text: `By: ${modal.member.displayName}`,
+                    text: `${modal.member.displayName}`,
                     iconURL: modal.member.displayAvatarURL()
                 })
                 .setTimestamp()
