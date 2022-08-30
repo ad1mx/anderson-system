@@ -38,6 +38,7 @@ module.exports = {
         } else {
             return await interaction.reply({
                 content: `لتقديم اقتراحك يجب ان تكتب هذا الامر ب <#${process.env.sugsChannelId}>`,
+                ephemeral: true
             })
         }
 
