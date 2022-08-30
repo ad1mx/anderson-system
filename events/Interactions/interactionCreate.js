@@ -11,7 +11,7 @@ module.exports = {
      */
     async run(interaction, client) {
 
-        if (interaction.isChatInputCommand() || interaction.isContextMenuCommand() || interaction.isButton() || interaction.isModalSubmit()) {
+        if (interaction.isChatInputCommand() || interaction.isContextMenuCommand() || interaction.isButton()) {
 
             const command = await client.commands.get(interaction.commandName)
 
