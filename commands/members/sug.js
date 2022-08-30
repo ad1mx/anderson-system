@@ -26,7 +26,7 @@ module.exports = {
                     .setPlaceholder('Enter your suggestion title'),
                 new TextInputComponent()
                     .setCustomId('sug-description')
-                    .setLabel('Suggestion')
+                    .setLabel('Suggestion Description')
                     .setRequired(true)
                     .setStyle('LONG')
                     .setPlaceholder('Enter your suggestion description'),
@@ -38,7 +38,6 @@ module.exports = {
         } else {
             return await interaction.reply({
                 content: `لتقديم اقتراحك يجب ان تكتب هذا الامر ب <#${process.env.sugsChannelId}>`,
-                ephemeral: true
             })
         }
 

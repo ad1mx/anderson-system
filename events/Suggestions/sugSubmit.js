@@ -22,21 +22,30 @@ module.exports = {
                     name: modal.member.displayName,
                     iconURL: modal.member.displayAvatarURL()
                 })
-                .setTitle('<:sug:1012553940560252959>・' + sugTitleUpper)
-                .setDescription(sugDesUpper)
+                .setTitle('<:sug2:1013859955692011551>・Suggestion')
+                .setFields([
+                    {
+                        name: 'Title',
+                        value: sugTitleUpper
+                    },
+                    {
+                        name: 'Description',
+                        value: sugDesUpper
+                    }
+                ])
                 .setFooter({
                     text: modal.guild.name,
                     iconURL: modal.guild.iconURL()
                 })
                 .setTimestamp()
-                .setColor(0xff1111)
+                .setColor(0x00ceff)
 
             await modal.guild.channels.cache.get(process.env.sugsChannelId).send({
                 embeds: [sugEmbed]
             })
                 .then(msg => {
-                    msg.react('<:664250091762221091:997007876881137764>');
-                    msg.react('<:664250092005359656:997007883529097366>');
+                    msg.react('<a:980424049714946048:997969027475456020>');
+                    msg.react('<a:980424085202935808:997970964732182558>');
                 })
 
             await modal.reply({

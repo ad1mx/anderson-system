@@ -39,20 +39,19 @@ module.exports = {
                     .setEmoji({ id: '996941474782515221', name: '796079226531872798' })
             )
 
+
+        await interaction.deferReply()
+
         await interaction.channel.send({
             embeds: [activEmbed],
             components: [activBtn]
         })
-            .finally(() => interaction.reply({
-                content: 'Done',
-                ephemeral: true
-            }))
 
-        const collector = interaction.channel.createMessageComponentCollector()
-
-        collector.on('collect', async i => {
-            await i.reply('you clicked a btn')
+        interaction.followUp({
+            content: 'Done',
+            ephemeral: true,
+            fetchReply: true
         })
 
     }
-}
+} 

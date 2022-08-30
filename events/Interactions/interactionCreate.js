@@ -1,4 +1,6 @@
-const { CommandInteraction, Client } = require("discord.js")
+const { EmbedBuilder } = require("@discordjs/builders");
+const { CommandInteraction, Client } = require("discord.js");
+const ErrorEmbed = require("../../components/Embeds/ErrorEmbed");
 
 module.exports = {
     name: 'interactionCreate',
@@ -14,16 +16,15 @@ module.exports = {
             const command = await client.commands.get(interaction.commandName)
 
             if (!command) return await interaction.reply({
-                content: 'This command is not avaible!',
+                embeds: [new ErrorEmbed('هذا الامر لم يعد متوفرا بعد!')],
                 ephemeral: true
             });
-
             if (command.dev) {
                 const developers = process.env.DEVELOPERS_IDS.split(',')
                 const isDeveloper = developers.includes(interaction.user.id)
                 if (!isDeveloper) {
                     return await interaction.reply({
-                        content: 'اسف, فقط مبرمجي من يستطيع استخدام هذا الامر.',
+                        embeds: [new ErrorEmbed('اسف, فقط مبرمجي من يستطيع استخدام هذا الامر.')],
                         ephemeral: true
                     })
                 }
@@ -34,7 +35,7 @@ module.exports = {
             } catch (err) {
                 console.log(err)
                 return await interaction.reply({
-                    content: 'There was an error while runing this command!',
+                    embeds: [new ErrorEmbed('There was an error while runing this command!')],
                     ephemeral: true
                 })
             }
