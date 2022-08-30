@@ -18,10 +18,6 @@ module.exports = {
 
 
             const sugEmbed = new EmbedBuilder()
-                .setAuthor({
-                    name: modal.guild.name,
-                    iconURL: modal.guild.iconURL()
-                })
                 .setTitle('<:sug2:1013859955692011551>・Suggestion')
                 .setFields([
                     {
