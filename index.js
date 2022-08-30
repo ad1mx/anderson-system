@@ -1,5 +1,5 @@
 const dotenv = require('dotenv').config();
-const { Client, GatewayIntentBits, Collection, GatewayVersion } = require('discord.js')
+const { Client, GatewayIntentBits, Collection, } = require('discord.js')
 const discordMdals = require('discord-modals')
 
 const client = new Client({
